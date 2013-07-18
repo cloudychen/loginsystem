@@ -15,9 +15,9 @@ if (!is_null($_SESSION['user_name'])) {
         echo "<meta http-equiv='refresh' content='0;url=/login.html'>";
     }
 } elseif (is_null($_SESSION['user_name'])) {
-    echo "<script type='text/javascript'>";
-    echo "alert ('当前用户尚未登录，请登录！')";
-    echo "</script>";
+    //echo "<script type='text/javascript'>";
+    //echo "alert ('当前用户尚未登录，请登录！')";
+    //echo "</script>";
     echo "<meta http-equiv='refresh' content='0;url=/login.html'>";
     exit;
 }
