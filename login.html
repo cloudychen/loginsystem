@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="jquery2.0.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+  			$("#checkimg").click(function(){
+  				$("#checkimg").attr("src","http://www.google.com.hk/logos/doodles/2013/rembrandt_van_rijns_407th_birthday-1993005.4-res.png");
+  			});
+		});
+	</script>
+	<title>login system</title>
+</head>
+<body>
+	<div id="main">
+		<div id="login">
+			<form action="login.php" method="post">
+				<input type="text" id="username" name="username">
+				<input type="password" id="userpwd" name="userpwd">
+				<input type="text" id="checkcode" name="checkcode">
+					<img id="checkimg" src="#">
+				<input type="submit" value="submit"> 
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
