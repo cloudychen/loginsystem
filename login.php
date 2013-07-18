@@ -21,4 +21,7 @@ if (!is_null($_POST['username']) && !is_null($_POST['userpwd'])) {
         header("Location: /main.php");
     }
 }
+else{
+    header("Location: /login.html");
+}
 ?>
