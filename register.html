@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login system</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="jquery2.0.3.js"></script>
+        <script >
+            $(document).ready(function(){
+  			$("#userpwd1").keyup(function(){
+                            if($("#userpwd").val() == $("#userpwd1").val()){
+  				$("#checkPassword").css("color","#00ff00")
+                                $("#checkPassword").text("输入一致");
+                            }
+                            else{
+                                $("#checkPassword").css("color","#ff0000")
+                                $("#checkPassword").text("输入不一致");
+                            }
+                            //alert($("#userpwd"))
+  			});
+		});
+        </script>
+    </head>
+    <body>
+        <table  border="0">
+            <tr>
+                <td id="td1" colspan="2" >
+                    <h1 align="center" >新用户注册</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form  method="post" action="/index.php/Index/register">
+                        <table   align="center"> 
+                            <tr id="tr1"> 
+                                <td >账户:</td>
+                                <td ><input size="22" type="text" name="username">
+                                </td> 
+                            </tr> 
+                            <tr id="tr1"> 
+                                <td >昵称:</td>
+                                <td ><input size="22" type="text" name="nickname">
+                                </td> 
+                            </tr>
+                            <tr id="tr1"> 
+                                <td >邮箱:</td>
+                                <td ><input size="22" type="text" name="email">
+                                </td> 
+                            </tr> 
+                            <tr id="tr1"> 
+                                <td >口令:</td>
+                                <td > <input size="22" type="password" name="userpwd" id="userpwd">
+                                </td> 
+                            </tr>
+                            <tr id="tr1">
+                                <td>确认口令：</td>	
+                                <td><input size="22" type="password" name="userpwd1" id="userpwd1"> </td>
+                                <td>
+                                    <span id="checkPassword"></span>
+                                </td>
+                            </tr> 
+                            <tr id="tr1">
+                                <td>                             
+                                </td>
+                                <td >
+                                    <input type="submit" value="register">
+                                    <input type="reset" value="reset">
+                                </td> 
+                            </tr> 
+                        </table> 
+                    </form> 
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
