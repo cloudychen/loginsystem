@@ -3,9 +3,9 @@
 session_start();
 if (!is_null($_SESSION['user_name'])) {
     $user_name = strip_tags($_SESSION['user_name']);
-
+    require_once 'database.php';
     // 在数据库中查找session中的用户名，成功 $nums 不为0；否则 $nums 为0，登录失败
-    $result = $db->Query("SELECT id FROM user WHERE user_name='$user_name'");
+    $result = $db->Query("SELECT id FROM user WHERE username='$user_name'");
     $nums = $db->Num_rows($result);
 
     if ($nums == 0) {
@@ -14,11 +14,9 @@ if (!is_null($_SESSION['user_name'])) {
         echo "</script>";
         echo "<meta http-equiv='refresh' content='0;url=/login.html'>";
     }
-} elseif (is_null($_SESSION['user_name'])) {
-    //echo "<script type='text/javascript'>";
-    //echo "alert ('当前用户尚未登录，请登录！')";
-    //echo "</script>";
-    echo "<meta http-equiv='refresh' content='0;url=/login.html'>";
+} else if (is_null($_SESSION['user_name'])) {
+
+    header("Location: /login.html");
     exit;
 }
 ?>
