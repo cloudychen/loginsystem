@@ -64,5 +64,5 @@ class database {
 
 }
 
-$db = new dbClass('localhost', 'root', 'cl30CL', 'loginsystem', 'utf8');
+$db = new database('localhost', 'root', 'cl30CL', 'loginsystem', 'utf8');
 ?>
