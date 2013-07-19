@@ -45,14 +45,14 @@ body{
     text-align: center;
 }
 
-.loginbutton{
+.button{
     width: 100px;
     height: 40px;
     border-radius: 10px;
     background-color: rgba(225,225,225,0.8);
 }
 
-.loginbutton:hover{
+.button:hover{
     background-color: rgba(255,255,255,0.8);
 }
 
@@ -68,4 +68,110 @@ body{
 
 #logintable{
     margin: auto;
+}
+
+#header{
+    height: 30px;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    text-align: right;
+}
+
+.top{
+    display: inline;
+    color: #ffffff;
+    margin-top: 15px;
+    position: relative;
+    top: 7px;
+    right: 0px;
+    z-index: 100;
+}
+
+#right{
+    width: 20px;
+}
+
+#loginsuccse1{
+    width:640px;
+    height: 480px;
+    margin-top: 10%;
+    margin-left: 20%;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.6);
+}
+
+#loginsuccse2{
+    width:600px;
+    height: 440px;
+
+    margin-left: 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+}
+
+#top2{
+    height: 20px;
+    display: block;
+}
+
+#loginsuccse2 h2{
+    position: relative;
+    top: 150px;
+    margin-left: 240px;
+    display: block;
+    color: #fff;
+}
+#loginsuccse2 span{
+    position: relative;
+    top: 250px;
+    margin-left: 220px;
+    display: block;
+    color: #fff;
+    font-size: 500%;
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg); /* Internet Explorer */
+    -moz-transform:rotate(45deg); /* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg); /* Opera */
+}
+
+#register1{
+    width:640px;
+
+    margin-top: 10%;
+    margin-left: 20%;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.6);
+}
+
+#register2{
+    width:600px;
+
+    margin-left: 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+}
+
+.inputbox{
+    width: 280px;
+    height: 40px;
+    border-radius:10px;
+    font-size: 170%;
+    font-weight: 10;
+    color: #efefef;
+    background: rgba(0,0,0,0.1);
+    display: block;
+}
+
+.td1{
+    width: 150px;
+    color: #fff;
+    text-align: right;
+}
+.td2{
+    text-align: left;
+}
+
+#title{
+    color: #fff;
 }
