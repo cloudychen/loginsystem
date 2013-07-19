@@ -14,10 +14,13 @@ $info = $db->Fetch_array($result);
         <link rel="stylesheet" type="text/css" href="/style.css" />
     </head>
     <body>
-        <div id="header">昵称：<?php echo $info['nickname'] . " " ?>|<a href="/updateuserinfo.php"> 修改个人信息 </a> | <a href="/logout.php"> 退出 </a></div>
-        <div>
+        <div id="header"><div class="top" id="mainnickname">昵称：<?php echo $info['nickname'] . " " ?>|</div><a class="top" id="mainupdateinfo" href="/updateuserinfo.php"> 修改个人信息 </a> <div class="top" id="mainheadercutoff">|</div> <a class="top" id="mainlogout" href="/logout.php"> 退出 </a><div class="top" id="right">&nbsp;&nbsp;&nbsp;</div></div>
+        <div id="loginsuccse1">
+            <div id="top2"></div>
+            <div id="loginsuccse2">
             <h2>登陆成功！</h2>
-            <h1>:)</h1>
+            <span>:)</span>
+            </div>
         </div>
     </body>
 </html>
