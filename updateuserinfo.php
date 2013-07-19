@@ -17,11 +17,11 @@ $info = $db->Fetch_array($result);
             $(document).ready(function() {
                 $("#userpwd1").keyup(function() {
                     if ($("#userpwd").val() == $("#userpwd1").val()) {
-                        $("#checkPassword").css("color", "#00ff00");
+                        $("#checkPassword").css("color", "#6b947d");
                         $("#checkPassword").text("输入一致");
                     }
                     else {
-                        $("#checkPassword").css("color", "#ff0000");
+                        $("#checkPassword").css("color", "#b34c51");
                         $("#checkPassword").text("输入不一致");
                     }
                 });
@@ -38,57 +38,58 @@ $info = $db->Fetch_array($result);
         </script>
     </head>
     <body>
+        <div id="header"><div class="top" id="mainnickname">昵称：<?php echo $info['nickname'] . " " ?>|</div><a class="top" id="mainupdateinfo" href="/updateuserinfo.php"> 修改个人信息 </a> <div class="top" id="mainheadercutoff">|</div> <a class="top" id="mainlogout" href="/logout.php"> 退出 </a><div class="top" id="right">&nbsp;&nbsp;&nbsp;</div></div>
+        <div id="register1">
+            <div id="top2"></div>
+            <div id="register2">
         <table  border="0">
-            <tr>
-                <td id="td1" colspan="2" >
-                    <h1 align="center" >用户信息修改</h1>
-                </td>
-            </tr>
+            
             <tr>
                 <td>
                     <form  method="post" action="/update.php">
-                        <table   align="center"> 
+                        <table   align="center">
+                            <tr id="tr1"><td class="td1"></td><td><h1 id="title" align="center" >用户信息修改</h1></td></tr>
                             <tr id="tr1"> 
-                                <td >账户:</td>
-                                <td ><?php echo $info['username']; ?>
+                                <td class="td1">账户：</td>
+                                <td class="td2"><div class="inputbox"><?php echo $info['username']; ?></div>
                                 </td> 
                             </tr> 
                             <tr id="tr1"> 
-                                <td >昵称:</td>
-                                <td ><input size="22" type="text" name="nickname" value="<?php echo $info['nickname']; ?>">
+                                <td class="td1">昵称：</td>
+                                <td class="td2"><input class="inputbox" type="text" name="nickname" value="<?php echo $info['nickname']; ?>">
                                 </td> 
                             </tr>
                             <tr id="tr1"> 
-                                <td >邮箱:</td>
-                                <td ><input size="22" type="text" name="email" value="<?php echo $info['email']; ?>">
+                                <td class="td1">邮箱：</td>
+                                <td class="td2"><input class="inputbox" type="text" name="email" value="<?php echo $info['email']; ?>">
                                 </td> 
                             </tr>
                             <tr id="tr1"> 
-                                <td >原口令:</td>
-                                <td > <input size="22" type="password" name="olduserpwd" id="olduserpwd" disabled>
+                                <td class="td1">原口令：</td>
+                                <td class="td2"> <input class="inputbox" type="password" name="olduserpwd" id="olduserpwd" disabled>
                                 </td>
                                 <td>
                                     <span id="enableUpdatePassword">点击此处修改口令</span>
                                 </td>
                             </tr>
                             <tr id="tr1"> 
-                                <td >新口令:</td>
-                                <td > <input size="22" type="password" name="userpwd" id="userpwd" disabled>
+                                <td class="td1">新口令：</td>
+                                <td class="td2"> <input class="inputbox" type="password" name="userpwd" id="userpwd" disabled>
                                 </td> 
                             </tr>
                             <tr id="tr1">
-                                <td>确认口令：</td>	
-                                <td><input size="22" type="password" name="userpwd1" id="userpwd1" disabled> </td>
+                                <td class="td1">确认口令：</td>	
+                                <td class="td2"><input class="inputbox" type="password" name="userpwd1" id="userpwd1" disabled> </td>
                                 <td>
                                     <span id="checkPassword"></span>
                                 </td>
                             </tr> 
                             <tr id="tr1">
-                                <td>                             
+                                <td class="td1">                             
                                 </td>
-                                <td >
-                                    <input type="submit" value="update">
-                                    <input type="reset" value="reset">
+                                <td class="td2">
+                                    <input class="button" type="submit" value="update">
+                                    <input class="button" type="reset" value="reset">
                                 </td> 
                             </tr> 
                         </table> 
@@ -96,5 +97,6 @@ $info = $db->Fetch_array($result);
                 </td>
             </tr>
         </table>
+                </div><div id="top2"></div></div>
     </body>
 </html>
