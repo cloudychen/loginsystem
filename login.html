@@ -2,11 +2,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="/style.css" />
         <script type="text/javascript" src="jquery2.0.3.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $("#checkimg").click(function() {
                     $("#checkimg").attr("src", "http://www.google.com.hk/logos/doodles/2013/rembrandt_van_rijns_407th_birthday-1993005.4-res.png");
+                });
+            });
+            $(document).ready(function() {
+                $("#username").click(function() {
+                    $("#username").removeAttr("value");
+                    $("#userpwd").removeAttr("value");
+                    $("#userpwd").attr("type","password");
+                });
+            });
+            $(document).ready(function() {
+                $("#userpwd").click(function() {
+                    $("#username").removeAttr("value");
+                    $("#userpwd").removeAttr("value");
+                    $("#userpwd").attr("type","password");
                 });
             });
         </script>
@@ -16,12 +31,26 @@
         <div id="main">
             <div id="login">
                 <form action="login.php" method="post">
-                    <input type="text" id="username" name="username">
-                    <input type="password" id="userpwd" name="userpwd">
-                    <!--<input type="text" id="checkcode" name="checkcode">
-                            <img id="checkimg" src="#">-->
-                    <input type="submit" value="login">
-                    <a href="/register.html"><input type="button" value="register"></a>
+                    <table id="logintable">
+                        <tr>
+                            <td>
+                                <input type="text" class="loginbox loginusername" id="username" name="username" value="username">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="loginbox" id="userpwd" name="userpwd" value="password">
+                            </td>
+                        </tr>
+                        <!--<input type="text" id="checkcode" name="checkcode">
+                                <img id="checkimg" src="#">-->
+                        <tr>
+                            <td>
+                                <input type="submit" class="loginbutton" value="login">
+                                <a class="buttonlink" href="/register.html"><input type="button" class="loginbutton" value="register"></a>
+                            </td>
+                        </tr>
+                    </table>
                 </form>
             </div>
         </div>
