@@ -11,6 +11,7 @@ $info = $db->Fetch_array($result);
     <head>
         <title>login system</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="/style.css" />
     </head>
     <body>
         <div id="header">昵称：<?php echo $info['nickname'] . " " ?>|<a href="/updateuserinfo.php"> 修改个人信息 </a> | <a href="/logout.php"> 退出 </a></div>
