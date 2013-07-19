@@ -6,17 +6,34 @@
         <script type="text/javascript" src="jquery2.0.3.js"></script>
         <script >
             $(document).ready(function() {
-                $("#userpwd1").keyup(function() {
-                    if ($("#userpwd").val() == $("#userpwd1").val()) {
-                        $("#checkPassword").css("color", "#00ff00");
-                        $("#checkPassword").text("输入一致");
+
+            });
+
+            $(document).ready(function() {
+                $("#userpwd").keyup(function() {
+                    var length = $("#userpwd").val().length;
+                    if (length >= 6) {
+                        $("#checkLength").css("color", "#00ff00");
+                        $("#checkLength").text("√");
+                        $("#userpwd1").keyup(function() {
+                            if ($("#userpwd").val() == $("#userpwd1").val()) {
+                                $("#checkPassword").css("color", "#00ff00");
+                                $("#checkPassword").text("输入一致");
+                                $("#submit").removeAttr("disabled").focus();
+                            }
+                            else {
+                                $("#checkPassword").css("color", "#ff0000");
+                                $("#checkPassword").text("输入不一致");
+                            }
+                        });
                     }
                     else {
-                        $("#checkPassword").css("color", "#ff0000");
-                        $("#checkPassword").text("输入不一致");
+                        $("#checkLength").css("color", "#ff0000");
+                        $("#checkLength").text("口令太短");
                     }
                 });
             });
+
             $(document).ready(function() {
                 $("#username").change(function() {
                     var username = $("#username").val();
@@ -63,13 +80,16 @@
                             </tr>
                             <tr id="tr1"> 
                                 <td >邮箱:</td>
-                                <td ><input size="22" type="text" name="email">
+                                <td ><input size="22" type="email" name="email">
                                 </td> 
                             </tr> 
                             <tr id="tr1"> 
                                 <td >口令:</td>
                                 <td > <input size="22" type="password" name="userpwd" id="userpwd">
                                 </td> 
+                                <td>
+                                    <span id="checkLength"></span>
+                                </td>
                             </tr>
                             <tr id="tr1">
                                 <td>确认口令：</td>	
@@ -82,7 +102,7 @@
                                 <td>                             
                                 </td>
                                 <td >
-                                    <input type="submit" value="register">
+                                    <input type="submit" id="submit" value="register" disabled>
                                     <input type="reset" value="reset">
                                 </td> 
                             </tr> 
