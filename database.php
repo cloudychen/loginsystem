@@ -47,21 +47,6 @@ class database {
         $this->Query(" INSERT INTO $table_name($table_head) VALUES ($table_value) ");
     }
 
-    /* function Fn_Update($table_name,$table_head,$table_value) {
-      $this->Query(" UPDATE $table_name SET Address = 'Zhongshan 23', City = 'Nanjing' WHERE LastName = 'Wilson' ")
-      } */
-
-    function Fn_Select_Table($table_name) {
-        return $this->Query(" SELECT * FROM $table_name WHERE user_name='ycsxxp' ");
-    }
-
-    function Fn_List($table_name) {
-        $result = $this->Query(" SELECT * FROM $table_name ");
-        while ($row = $this->Fetch_array($result)) {
-            print_r($row);
-        }
-    }
-
 }
 
 $db = new database('localhost', 'root', 'cl30CL', 'loginsystem', 'utf8');
