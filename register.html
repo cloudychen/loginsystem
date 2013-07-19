@@ -14,22 +14,22 @@
                 $("#userpwd").keyup(function() {
                     var length = $("#userpwd").val().length;
                     if (length >= 6) {
-                        $("#checkLength").css("color", "#00ff00");
+                        $("#checkLength").css("color", "#6b947d");
                         $("#checkLength").text("√");
                         $("#userpwd1").keyup(function() {
                             if ($("#userpwd").val() == $("#userpwd1").val()) {
-                                $("#checkPassword").css("color", "#00ff00");
+                                $("#checkPassword").css("color", "#6b947d");
                                 $("#checkPassword").text("输入一致");
                                 $("#submit").removeAttr("disabled").focus();
                             }
                             else {
-                                $("#checkPassword").css("color", "#ff0000");
+                                $("#checkPassword").css("color", "#b34c51");
                                 $("#checkPassword").text("输入不一致");
                             }
                         });
                     }
                     else {
-                        $("#checkLength").css("color", "#ff0000");
+                        $("#checkLength").css("color", "#b34c51");
                         $("#checkLength").text("口令太短");
                     }
                 });
@@ -42,11 +42,11 @@
                             {"username": username},
                     function(data, status) {
                         if (data == "can") {
-                            $("#checkUsername").css("color", "#00ff00");
+                            $("#checkUsername").css("color", "#6b947d");
                             $("#checkUsername").text("用户名可以使用");
                         }
                         else {
-                            $("#checkUsername").css("color", "#ff0000");
+                            $("#checkUsername").css("color", "#b34c51");
                             $("#checkUsername").text("该用户名已存在");
                         }
                     }
@@ -56,55 +56,56 @@
         </script>
     </head>
     <body>
-        <table  border="0">
-            <tr>
-                <td id="td1" colspan="2" >
-                    <h1 align="center" >新用户注册</h1>
-                </td>
-            </tr>
+        <div id="header"></div>
+        
+        <div id="register1">
+            <div id="top2"></div>
+            <div id="register2">
+                <table  border="0">
             <tr>
                 <td>
                     <form  method="post" action="/register.php">
-                        <table   align="center"> 
+                        <table   align="center">
+                            <tr id="tr1"><td class="td1"></td><td class="td2"><h1 id="title" align="center" >新用户注册</h1></td></tr>
                             <tr id="tr1"> 
-                                <td >账户:</td>
-                                <td ><input size="22" type="text" id="username" name="username">
+                                <td class="td1">账户：</td>
+                                <td class="td2"><input class="inputbox" type="text" id="username" name="username">
                                 </td> 
                                 <td>
                                     <span id="checkUsername"></span>
                                 </td>
                             </tr> 
                             <tr id="tr1"> 
-                                <td >昵称:</td>
-                                <td ><input size="22" type="text" name="nickname">
+                                <td class="td1">昵称：</td>
+                                <td class="td2"><input class="inputbox" type="text" name="nickname">
                                 </td> 
                             </tr>
                             <tr id="tr1"> 
-                                <td >邮箱:</td>
-                                <td ><input size="22" type="email" name="email">
+                                <td class="td1">邮箱：</td>
+                                <td class="td2"><input class="inputbox" type="email" name="email">
                                 </td> 
                             </tr> 
                             <tr id="tr1"> 
-                                <td >口令:</td>
-                                <td > <input size="22" type="password" name="userpwd" id="userpwd">
+                                <td class="td1">口令：</td>
+                                <td class="td2"> <input class="inputbox" type="password" name="userpwd" id="userpwd">
                                 </td> 
                                 <td>
                                     <span id="checkLength"></span>
                                 </td>
                             </tr>
                             <tr id="tr1">
-                                <td>确认口令：</td>	
-                                <td><input size="22" type="password" name="userpwd1" id="userpwd1"> </td>
+                                <td class="td1">确认口令：</td>	
+                                <td class="td2"><input class="inputbox" type="password" name="userpwd1" id="userpwd1"> </td>
                                 <td>
                                     <span id="checkPassword"></span>
                                 </td>
                             </tr> 
                             <tr id="tr1">
-                                <td>                             
+                                <td class="td1">                             
                                 </td>
-                                <td >
-                                    <input type="submit" id="submit" value="register" disabled>
-                                    <input type="reset" value="reset">
+                                <td class="td2">
+                                    <input class="button" type="submit" id="submit" value="register" disabled>
+                                    <input class="button" type="reset" value="reset">
                                 </td> 
                             </tr> 
                         </table> 
@@ -112,5 +113,6 @@
                 </td>
             </tr>
         </table>
+            </div><div id="top2"></div></div>
     </body>
 </html>
