@@ -3,12 +3,12 @@
 session_start();
 require_once 'checkSession.php';
 require_once 'database.php';
-$user_name = strip_tags($_SESSION["user_name"]);
+$user_name = addslashes(strip_tags($_SESSION["user_name"]));
 $result = $db->Query(' SELECT * FROM user WHERE username="' . $user_name . '"');
 $info = $db->Fetch_array($result);
 
-$nick_name = $_POST['nickname'];
-$email = $_POST['email'];
+$nick_name = addslashes(strip_tags($_POST['nickname']));
+$email = addslashes(strip_tags($_POST['email']));
 
 if (is_null($_POST['olduserpwd'])) {
     $db->Query('update user set nickname ="' . $nick_name . '" where username="' . $user_name . '"');
@@ -22,11 +22,11 @@ if (is_null($_POST['olduserpwd'])) {
         echo "</script>";
         echo "<meta http-equiv='refresh' content='0;url=/updateuserinfo.php'>";
     } else {
-        if (md5(md5(strip_tags($_POST['olduserpwd'])) . $info['salt']) == $info['password']) {
+        if (md5(md5(addslashes(strip_tags($_POST['olduserpwd']))) . $info['salt']) == $info['password']) {
             $db->Query('update user set nickname ="' . $nick_name . '" where username="' . $user_name . '"');
             $db->Query('update user set email ="' . $email . '" where username="' . $user_name . '"');
             $salt = md5(rand());
-            $user_pass = md5(md5(strip_tags($_POST['userpwd'])) . $salt);
+            $user_pass = md5(md5(addslashes(strip_tags($_POST['userpwd']))) . $salt);
             $db->Query('update user set password ="' . $user_pass . '" where username="' . $user_name . '"');
             $db->Query('update user set salt ="' . $salt . '" where username="' . $user_name . '"');
             session_destroy();
