@@ -2,7 +2,7 @@
 
 session_start();
 if (!is_null($_SESSION['user_name'])) {
-    $user_name = strip_tags($_SESSION['user_name']);
+    $user_name = addslashes(strip_tags($_SESSION['user_name']));
     require_once 'database.php';
     // 在数据库中查找session中的用户名，成功 $nums 不为0；否则 $nums 为0，登录失败
     $result = $db->Query("SELECT id FROM user WHERE username='$user_name'");
