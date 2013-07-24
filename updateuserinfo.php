@@ -56,17 +56,17 @@ $info = $db->Fetch_array($result);
                             </tr> 
                             <tr id="tr1"> 
                                 <td class="td1">昵称：</td>
-                                <td class="td2"><input class="inputbox" type="text" name="nickname" value="<?php echo $info['nickname']; ?>">
+                                <td class="td2"><input class="inputbox" type="text" name="nickname" value="<?php echo $info['nickname']; ?>" autocomplete="off">
                                 </td> 
                             </tr>
                             <tr id="tr1"> 
                                 <td class="td1">邮箱：</td>
-                                <td class="td2"><input class="inputbox" type="text" name="email" value="<?php echo $info['email']; ?>">
+                                <td class="td2"><input class="inputbox" type="text" name="email" value="<?php echo $info['email']; ?>" autocomplete="off">
                                 </td> 
                             </tr>
                             <tr id="tr1"> 
                                 <td class="td1">原口令：</td>
-                                <td class="td2"> <input class="inputbox" type="password" name="olduserpwd" id="olduserpwd" disabled>
+                                <td class="td2"> <input class="inputbox" type="password" name="olduserpwd" id="olduserpwd" disabled autocomplete="off">
                                 </td>
                                 <td>
                                     <span id="enableUpdatePassword">点击此处修改口令</span>
@@ -74,12 +74,12 @@ $info = $db->Fetch_array($result);
                             </tr>
                             <tr id="tr1"> 
                                 <td class="td1">新口令：</td>
-                                <td class="td2"> <input class="inputbox" type="password" name="userpwd" id="userpwd" disabled>
+                                <td class="td2"> <input class="inputbox" type="password" name="userpwd" id="userpwd" disabled autocomplete="off">
                                 </td> 
                             </tr>
                             <tr id="tr1">
                                 <td class="td1">确认口令：</td>	
-                                <td class="td2"><input class="inputbox" type="password" name="userpwd1" id="userpwd1" disabled> </td>
+                                <td class="td2"><input class="inputbox" type="password" name="userpwd1" id="userpwd1" disabled autocomplete="off"> </td>
                                 <td>
                                     <span id="checkPassword"></span>
                                 </td>
